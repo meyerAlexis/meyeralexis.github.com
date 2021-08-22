@@ -1,1 +1,198 @@
-Hello world
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cv Meyer Alexis</title> <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script> <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-database.js"></script> <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-auth.js"></script><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous" /><script src="https://code.jquery.com/jquery-1.12.4.js"></script> <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> <link rel="stylesheet" href="./style.css" media="all"> </head> <body>
+
+  <main class="form-signin text-center"><h1 class="h3 mb-3 fw-normal">Loggez vous</h1>
+    <form id="signin"><div class="form-floating"><input type="email" class="form-control" id="floatingInput" name="email" placeholder="username@email.com" pattern="\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b" title="Rentrez un email valid username@mail.com" required ><label for="floatingInput">Email</label> </div> <div class="form-floating"><input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Password" pattern=".{6,12}" title="6 à 12 caractéres" required ><label for="floatingPassword">Mot de passe</label></div><button class="w-100 btn btn-lg btn-primary" type="submit">Se logger</button></form> <button id="login-anonym" class="w-100 btn btn-lg btn-primary" type="submit">Se logger en anonyme</button><p class="mt-5 mb-3 text-muted">© 2017–2021</p></main>
+
+<div class="grid container-fluid" style="--bs-columns: 18; --bs-gap: .5rem;" style="display: none;"></div><script> var firebaseConfig = {apiKey: "AIzaSyCowB1R31yc5kDWRwMFETLzR2sGbOntUHs",authDomain: "moncv-56909.firebaseapp.com", databaseURL: "https://moncv-56909-default-rtdb.europe-west1.firebasedatabase.app", projectId: "moncv-56909", storageBucket: "moncv-56909.appspot.com", messagingSenderId: "320174699992", appId: "1:320174699992:web:e11f5f4185bea01b2aeead"}; firebase.initializeApp(firebaseConfig);const db = firebase.database().ref('/langage'); function removeLoginAffContent() {
+    document.querySelector(".form-signin").remove();document.querySelector("div.container-fluid").style.display="block";document.querySelector("div.container-fluid").innerHTML = `
+    <div class="g-col-4 d-flex flex-column" id="side_cv"> <div id="infos" class="sidebar-sticky"></div><div id="side-competences" class="sidebar-sticky"></div><div id="side-lang" class="sidebar-sticky"><select id="lang"><option value="fr">Fran&cacute;ais</option><option value="en">Anglais</option></select> </div></div> <div  id="content-main" style="grid-column: span 14;" >  <div id="search" class="lead"> <input class="title" type="text"  value=""><span class="QCzoEc z1asCe MZy1Rb">
+    <svg  style="margin-top:10px; margin-left:5px;" width="34px" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg></span></div> <div class="intro lead"><svg id="svg-load" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin: auto; background: none; display: block; shape-rendering: auto;" width="200px" height="200px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid"><g transform="rotate(0 50 50)"> <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#93dbe9"><animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.9166666666666666s" repeatCount="indefinite"></animate></rect></g><g transform="rotate(30 50 50)"> <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#93dbe9"><animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.8333333333333334s" repeatCount="indefinite"></animate></rect></g><g transform="rotate(60 50 50)"><rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#93dbe9"><animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.75s" repeatCount="indefinite"></animate></rect></g><g transform="rotate(90 50 50)"><rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#93dbe9"><animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.6666666666666666s" repeatCount="indefinite"></animate></rect></g><g transform="rotate(120 50 50)"><rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#93dbe9"><animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.5833333333333334s" repeatCount="indefinite"></animate></rect></g><g transform="rotate(150 50 50)"><rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#93dbe9"><animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.5s" repeatCount="indefinite"></animate></rect></g><g transform="rotate(180 50 50)"><rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#93dbe9"> <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.4166666666666667s" repeatCount="indefinite"></animate></rect></g><g transform="rotate(210 50 50)"><rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#93dbe9"> <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.3333333333333333s" repeatCount="indefinite"></animate></rect></g><g transform="rotate(240 50 50)"><rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#93dbe9"><animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.25s" repeatCount="indefinite"></animate></rect></g><g transform="rotate(270 50 50)"><rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#93dbe9">
+    <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.16666666666666666s" repeatCount="indefinite"></animate></rect></g><g transform="rotate(300 50 50)"> <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#93dbe9">
+    <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.08333333333333333s" repeatCount="indefinite"></animate></rect></g><g transform="rotate(330 50 50)"><rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#93dbe9">
+    <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="0s" repeatCount="indefinite"></animate></rect></g></div><a id="competence_pos"></a><div id="competence_id" data-stats-ve="32"></div> <p class="lead" id="competences"></p> <a id="experience_pos"></a> <div id="experience_id" data-stats-ve="32"></div><div class="accordion lead" id="accordion-exp" ></div><a id="formation_pos"></a><div id="formation_id" data-stats-ve="32"></div><div id="accordion-form" class="accordion lead"></div><a id="creation_pos"></a><div id="creation_id" data-stats-ve="32"></div><div class="accordion lead" id="accordion-creat"></div><a id="passetemps_pos"></a><div id="hobbie_id" data-stats-ve="32"> </div><p class="lead" id="hobbie"></p></div>`; this.resizeLoading(window);this.actifSelectLang();
+}
+
+
+document.querySelector("form#signin").addEventListener("submit", (e) => {
+    e.preventDefault();firebase.auth().signInWithEmailAndPassword( e.target.email.value, e.target.password.value).then((userCredential) => { var user = userCredential.user; sessionStorage.setItem("user_email",e.target.email.value); sessionStorage.setItem("user", user); removeLoginAffContent();  this.affCvByLang('fr');}).catch((error) => { var errorCode = error.code; var errorMessage = error.message;alert(`Error code: ${errorCode} \n Error Message : ${errorMessage}`);});});
+
+
+document.querySelector("#login-anonym").addEventListener("click", (e) => { firebase.auth().onAuthStateChanged((user) => { this.removeLoginAffContent();this.affCvByLang('fr'); });});
+
+function actifSelectLang(){document.querySelector("select#lang").addEventListener("change", (e) => {this.affCvByLang(e.target.value); });}
+
+let reftable;
+let textExpById = [];
+let textFormById = [];
+let listCompExpForm = '';
+function affCvByLang(lang) {          
+      
+  this.affLangage(lang, '/langage/');
+  this.affExperience(lang, '/experience/');
+  this.affFormation(lang, '/formation/');
+  this.affSideCompetence(lang, '/competence/');
+  this.affCreation(lang, '/creation/');
+  this.affHobbies(lang, '/hobbies/');
+
+  let tabTest = [500, 900, 1200, 1900, 2800, 3800]; tabTest.forEach((val) =>{setTimeout(function(){this.actifAccordion(); this.actifToolTip();}, Number(val)); })
+
+
+}
+
+
+
+let titleExp = '';let titleForm = '';
+function affLangage(lang, table){
+    reftable = firebase.database().ref(table);  let htmlInfos=""; let htmlTitle= ""; let htmlDescrib= "";let htmlIntro="";reftable.on('value', (langage)=>{ let dataLangages = langage.val(); for(let id in dataLangages){ htmlInfos += `<div class="nav flex-column type list-unstyled"  id="coordinated">                <div>${dataLangages[id].name[lang]}</div><div>${dataLangages[id].email[lang]}</div><div>${dataLangages[id].phone[lang]}</div><div>${dataLangages[id].address[lang]}</div>                                <div>${dataLangages[id].nationality[lang]}</div></div>`;htmlTitle = `${dataLangages[id].title[lang]}`;htmlDescrib = `<div id="describ">${dataLangages[id].competence_describ[lang]}</div>`; htmlIntro = `<div id="intro">${dataLangages[id].intro[lang]}</div>`; htmlSectionComp = `<div id="section_comp" class="lead"> ${dataLangages[id].section_comp[lang]}</div>`;htmlSectionCreat = `<div id="section_creat" class="lead"> ${dataLangages[id].section_creat[lang]}</div>`; htmlSectionExp = `<div id="title" class="lead">${dataLangages[id].section_exp[lang]}</div>`;  htmlSectionForm = `<div id="title" class="lead">${dataLangages[id].section_form[lang]}</div>`; htmlSectionHob = `<div id="title" class="lead">${dataLangages[id].section_hob[lang]}</div>`;titleExp = dataLangages[id].section_exp[lang]; titleForm = dataLangages[id].section_form[lang];
+      }
+    
+typewriteInput(".title",htmlTitle);document.querySelector('.title').value = htmlTitle;setTimeout(function(){document.querySelector("#lang").disabled = false;}, 5000);document.querySelector('.intro').innerHTML = htmlIntro;        document.querySelector('#competences').innerHTML = htmlDescrib;document.querySelector('#infos').innerHTML = htmlInfos;document.querySelector('#competence_id').innerHTML = this.getHtmlTab(1);document.querySelector('#experience_id').innerHTML = this.getHtmlTab(2);document.querySelector('#formation_id').innerHTML = this.getHtmlTab(3);document.querySelector('#hobbie_id').innerHTML = this.getHtmlTab(4);document.querySelector('#creation_id').innerHTML = this.getHtmlTab(5);   document.querySelectorAll('#tab1').forEach(function(tab) {tab.innerHTML = htmlSectionComp;});document.querySelectorAll('#tab2').forEach(function(tab) {tab.innerHTML = htmlSectionExp;});document.querySelectorAll('#tab3').forEach(function(tab) {tab.innerHTML = htmlSectionForm;});document.querySelectorAll('#tab4').forEach(function(tab) {tab.innerHTML = htmlSectionHob;});document.querySelectorAll('#tab5').forEach(function(tab) {tab.innerHTML = htmlSectionCreat;});});
+}
+
+  
+function getHtmlTab(idTab) {let inactif = `class="appbar-helpcenter-sections__link appbar-helpcenter-sections--community" aria-label="Community" aria-selected="false"`;let actif = `class="appbar-helpcenter-sections__link appbar-helpcenter-sections--community appbar-helpcenter-sections--active" aria-label="Community" aria-selected="true"`;let actifTab1 = inactif;let actifTab2 = inactif;let actifTab3 = inactif;let actifTab4 = inactif;let actifTab5 = inactif;switch (idTab) {case 1: actifTab1 = actif; break;case 2: actifTab2 = actif; break; case 3: actifTab3 = actif; break;case 4:  actifTab4 = actif; break; case 5:  actifTab5 = actif; break;default:break;  } return `<div class="appbar-scroll-box"><div class="appbar-container"><div class="appbar"><div class="appbar-internal"><div id="tabs"><a id="tab1" ${actifTab1} href="#competence_pos"></a><a id="tab2" ${actifTab2} href="#experience_pos"></a><a id="tab3" ${actifTab3} href="#formation_pos"></a><a id="tab5" ${actifTab5} href="#creation_pos"></a><a id="tab4" ${actifTab4} href="#passetemps_pos"></a></div></div></div></div> </div>`;
+  }
+
+
+function resizeLoading(element){$( "#svg-load" ).height($(element).height()-98) ;}
+
+$( function() {$( window ).resize(function() { this.resizeLoading(this);});}); 
+
+    function actifToolTip(){for(let index = 1; index < nbComp+1; index++) { $( "#tool-comp-"+index ).tooltip({ show: null, content: $( "#tool-comp-"+index).attr("tooltip"), tooltipClass: "info-tooltip"}); $( "#tool-comp-"+index).on({ "mouseenter": function() {$(this).tooltip("open"); },"mouseout": function() {$(this).tooltip("close");}}); }  }
+
+    function actifAccordion(){ $( function() {$( "#accordion-form, #accordion-creat, #accordion-exp" ).accordion({ header: 'h3',  autoHeight: true,  beforeActivate: function(event, ui) { $(this).addClass("collapsed"); } }); });}
+
+
+    function typewriteInput (target, text, loop, speed) { document.querySelector("#lang").disabled = true; target = document.querySelector(target);if (speed === undefined) { speed = 120; } if (loop === undefined) { loop = false; } let pointer = 0;let timer = setInterval(function(){ pointer++; if (pointer <= text.length) {target.value = text.substring(0, pointer); } else { if (loop) { pointer = 0; }else {clearInterval(timer);}}}, speed); }
+
+
+    async  function affFormation(lang, table) { reftable = await firebase.database().ref(table); let htmlExp="";reftable.on('value', (exp)=>{let dataForm = exp.val(); for(let id in dataForm) { textFormById[dataForm[id].id] = dataForm[id].title[lang]; htmlExp += `<h3 class="accordion-button"> ${dataForm[id].title[lang]} </h3><div  class="accordion show"> <p><ul class="list-unstyled"><li> ${dataForm[id].date[lang]}</li><li> ${(dataForm[id].describ[lang] == ' undefined')? '': dataForm[id].describ[lang]}</li><li> ${(dataForm[id].level == ' undefined')? '': dataForm[id].level}</li></ul></p></div>`;} document.querySelector("div#accordion-form").innerHTML = htmlExp;});}
+
+    async function affCreation(lang, table) {
+          reftable = await firebase.database().ref(table); 
+          let htmlExp="";
+          reftable.on('value', (exp)=>{
+            let dataCreat = exp.val(); for(let id in dataCreat) { htmlExp += `<h3 class="accordion-button"> ${dataCreat[id].name[lang]} </h3><div  class="accordion show"><p><ul class="list-unstyled"><li> ${dataCreat[id].date}</li><li> ${dataCreat[id].describ[lang]}</li><li> ${dataCreat[id].link}</li></ul></p></div>`;} document.querySelector("#accordion-creat").innerHTML = htmlExp; });
+        }
+
+
+        async function affHobbies(lang, table) {
+          reftable = await firebase.database().ref(table); 
+          let html="";
+          reftable.on('value', (exp)=>{
+            let dataHob = exp.val();
+            let i=0;
+            let lenHob = 0;
+            let style = '';
+        
+            for(let id in dataHob) {lenHob++}for(let id in dataHob) {  style = (i == lenHob -1)? `.` : `,`;  html += `<span id="hobbie-${i}" >${dataHob[id].name[lang]}${style} </span>`; i++;
+            }
+           
+            document.querySelector("#hobbie").innerHTML = html;
+          });
+        }        
+        
+        async function affExperience(lang, table) {
+          reftable = await firebase.database().ref(table); 
+          let htmlExp="";
+          reftable.on('value', (exp)=>{
+            let dataExp = exp.val();
+            for(let id in dataExp) {
+              textExpById[dataExp[id].id] = dataExp[id].title[lang];
+                htmlExp += `
+                  <h3 class="accordion-button"> ${dataExp[id].title[lang]} </h3>
+                  <div  class="accordion show">
+                  
+                      <ul class="list-unstyled">
+                        <li> ${dataExp[id].date[lang]}</li>
+                        <li> ${dataExp[id].locality[lang]}</li>
+                      </ul>
+                   
+                  </div>`;
+            }
+              document.querySelector("div#accordion-exp").innerHTML = htmlExp;
+    
+          });
+        
+         
+        }
+
+        let nbComp = 0;
+        async function affSideCompetence(lang, table){
+          reftable = await firebase.database().ref(table); 
+          let htmlComp= [];
+          let level1= `<svg width="80" height="30" viewBox="0 0 4 2" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1,1 h0" stroke="#4285f4" stroke-linecap="round" />                    
+                  </svg>`;
+          let level2= `<svg width="80" height="30" viewBox="0 0 4 2" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1,1 h0" stroke="#4285f4" stroke-linecap="round" />
+                    <path d="M2,1 h0" stroke="#ea4335" stroke-linecap="round" />                    
+                  </svg>`;
+          let level3= `<svg width="80" height="30" viewBox="0 0 4 2" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1,1 h0" stroke="#4285f4" stroke-linecap="round" />
+                    <path d="M2,1 h0" stroke="#ea4335" stroke-linecap="round" />
+                    <path d="M3,1 h0" stroke="#fbbc05" stroke-linecap="round" />                     
+                  </svg>`;
+          reftable.on('value', (comp)=>{
+            let dataComp = comp.val();  let affLevel = '';
+            
+            for(let id in dataComp) { nbComp++; let index = 0; let type = '';
+              switch (dataComp[id].level) { case 1: affLevel = level1; break; case 2: affLevel = level2; break; case 3: affLevel = level3; break; default:affLevel = level1; }
+
+
+              if(dataComp[id].display == 'true') {
+                type = dataComp[id].type[lang].trim(); let compAffExp = ''; let tabCompExp = ''; let tabCompForm = '';let affAllCompExp = ''; let affAllCompForm = ''; let nbCompExp = 0;
+                  if(typeof(dataComp[id].experience) != 'undefined'){
+                    compAffExp = dataComp[id].experience;
+                    dataComp[id].experience.forEach((e)=>{
+                      nbCompExp++;
+                      if(typeof( textExpById[e] ) != 'undefined' ) {affAllCompExp += '<td>'+ textExpById[e] +'</td>';}else{ nbCompExp--; } }); } 
+
+                  let nbCompForm = 0;
+                  if(typeof(dataComp[id].formation) != 'undefined'){
+                    compAffForm = dataComp[id].formation;
+                    dataComp[id].formation.forEach((e)=>{
+                      nbCompForm++;
+                      if(typeof( textFormById[e] ) != 'undefined' ) {  affAllCompForm += '<td>'+ textFormById[e] +'</td>'; }else{ nbCompForm--;}  });  } 
+
+                  let tableHeadExp = (compAffExp != '')? '<th colspan=\''+nbCompExp+'\'>'+titleExp+'</th>': '';
+                  let tableHeadForm = (compAffForm != '')? '<th colspan=\''+nbCompForm+'\'>'+titleForm+'</th>': '';
+
+                  let tableBodyExp = (compAffExp != '')?  `<table class=\'tool-table\'><thead><tr class=\'tool-table-head\'>${tableHeadExp}</tr></thead><tbody><tr class=\'tool-table-body\'>${affAllCompExp } </tr></tbody></table>`: '';
+                  let tableBodyForm = (compAffForm != '')? `<table class=\'tool-table\'><thead><tr class=\'tool-table-head\'>${tableHeadForm}</tr></thead><tbody><tr class=\'tool-table-body\'>${affAllCompForm}</tr></tbody></table>`: '';
+                  
+                  listCompExpForm = tableBodyExp+tableBodyForm;
+                    htmlComp[type] += `
+                    <div id="tool-comp-${dataComp[id].id}" class="open-event" title=""  tooltip="${listCompExpForm}">
+                     
+                        <span id="comp-${dataComp[id].id}" class="title-comp">${dataComp[id].name[lang].trim()}</span>
+                        <span id="level-comp" class="level-${dataComp[id].level}">${affLevel}</span>
+                     
+                    </div>`;
+                }
+            }
+          
+            let htmlSideComp = ''; let compType = ''; let numType = 1;
+            for(let type in htmlComp ) {
+              compType = htmlComp[type].trim().replace('undefined', '');
+              htmlSideComp += `<h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+              <span id="type-${numType}">${type.charAt(0).toUpperCase() + type.slice(1)}</span>
+              </h6>${compType}`;
+
+              numType++;
+            }
+            document.querySelector("#side-competences").innerHTML = htmlSideComp;
+          });
+          
+        }
+
+      $( function() { $( "#accordion-form" ).accordion({ collapsible: true }); $( "#accordion-creat" ).accordion({   collapsible: true }); $( "#accordion-exp" ).accordion({  collapsible: true });  }); 
+    </script>
+  </body>
+</html>
